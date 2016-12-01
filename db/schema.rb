@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201230524) do
+ActiveRecord::Schema.define(version: 20161201232445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.date     "swap_date"
+    t.string   "gift_description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "groups_swappers", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "swapper_id"
+    t.index ["group_id"], name: "index_groups_swappers_on_group_id", using: :btree
+    t.index ["swapper_id"], name: "index_groups_swappers_on_swapper_id", using: :btree
+  end
+
+  create_table "swappers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
