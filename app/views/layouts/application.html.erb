@@ -10,9 +10,25 @@
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+  <div class="container">
+    <div class="row u-full-width">
+      <h1>Sock Exchange</h1>
+    </div>
+    <div class="row class="u-full-width"">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
     <%= yield %>
+
+    <div class="row u-full-width">
+      <% if current_user %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+    </div>
+
+  </div>
   </body>
 </html>
