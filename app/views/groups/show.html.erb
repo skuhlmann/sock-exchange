@@ -1,0 +1,24 @@
+<%= render partial: "groups/group_header", locals: { group: @group } %>
+
+<div class="row">
+  <div class="four columns">
+    <%= render partial: "groups/swapper_list", locals: { group: @group } %>
+  </div>
+
+  <div class="four columns">
+    <h5>Add a swapper</h5>
+
+    <%= render partial: "swappers/form", locals: { group: @group, swapper: @swapper } %>
+
+  </div>
+
+  <div class="four columns">
+    <h5>Choose swapmates</h5>
+
+
+  </div>
+</div>
+
+<div class="row">
+  THIS WILL BE THE SWAP EMAIL BUTTON
+</div>
