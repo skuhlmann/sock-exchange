@@ -1,0 +1,7 @@
+<%= button_to "Scramble Swappers", group_scramble_path(@group) %>
+
+
+<% unless @group.swap_pairs.empty? %>
+  <%= @group.swap_pairs %>
+  <%= button_to "Blast Swap Emails", email_blast_path(@group) %>
+<% end %>

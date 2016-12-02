@@ -9,7 +9,10 @@ class SwappersController < ApplicationController
     group = Group.find(params[:group_id])
     swapper = Swapper.create(swapper_params)
     swapper.groups << group
-    update_partner(swapper)
+
+    if swapper_params[:partner_id] != ""
+      update_partner(swapper)
+    end
 
     redirect_to group_path(group)
   end
@@ -18,7 +21,10 @@ class SwappersController < ApplicationController
     group = Group.find(params[:group_id])
     swapper = Swapper.find(params[:id])
     swapper.update(swapper_params)
-    update_partner(swapper)
+
+    if swapper_params[:partner_id] != ""
+      update_partner(swapper)
+    end
 
     redirect_to group_path(group)
   end

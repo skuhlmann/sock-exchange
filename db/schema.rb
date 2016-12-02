@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202014228) do
+ActiveRecord::Schema.define(version: 20161202023408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20161202014228) do
     t.string   "name"
     t.date     "swap_date"
     t.string   "gift_description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "swap_pairs",       default: [],              array: true
   end
 
   create_table "groups_swappers", force: :cascade do |t|
