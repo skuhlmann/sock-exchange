@@ -3,6 +3,6 @@
 <%= button_to "Scramble Swappers", group_scramble_path(@group) %>
 
 <% unless @group.swap_pairs.empty? %>
+  <p>Pairs are chosen!</p>
   <%= button_to "Blast Swap Emails", email_blast_path(@group) %>
-    <p>Pairs are chosen!</p>
 <% end %>
