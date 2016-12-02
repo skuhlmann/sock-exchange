@@ -4,6 +4,5 @@
 
 <% unless @group.swap_pairs.empty? %>
   <%= button_to "Blast Swap Emails", email_blast_path(@group) %>
-    <p>Pairs</p>
-    <%= @group.swap_pairs.to_s %>
+    <p>Pairs are chosen!</p>
 <% end %>
