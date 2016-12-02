@@ -1,5 +1,5 @@
 class SwapMailer < ActionMailer::Base
-  default from: 'brownxmasexchange@gmail.com'
+  default from: 'brownsgiftswap@gmail.com'
 
   def swap_email(gifter, giftee, group)
     @gifter = gifter
