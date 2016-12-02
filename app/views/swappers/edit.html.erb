@@ -1,8 +1,8 @@
 <%= render partial: "groups/group_header", locals: { group: @group } %>
 
 <div class="row">
-  <div class="four columns">
-    <%= render partial: "groups/swapper_list", locals: { group: @group } %>
+  <div class="five columns">
+    <%= render partial: "groups/swapper_list", locals: { group: @group, swappers: @swappers } %>
   </div>
 
   <div class="four columns">
@@ -13,7 +13,7 @@
     <%= link_to "Add a new swapper", group_path(@group) %>
   </div>
 
-  <div class="four columns">
+  <div class="three columns">
     <%= render partial: "groups/group_links", locals: { group: @group } %>
 
   </div>

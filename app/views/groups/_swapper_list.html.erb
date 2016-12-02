@@ -1,8 +1,19 @@
 <h5>The Swappers</h5>
-<ol>
-  <% @group.swappers.each do |swapper| %>
-    <li>
-      <%= swapper.name %> | <%= swapper.email %> | <%= link_to "Edit", edit_group_swapper_path(@group, swapper) %>
-    </li>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @swappers.each do |swapper| %>
+    <tr>
+      <td><%= swapper.name %></td>      
+      <td><%= swapper.email %></td>      
+      <td><%= link_to "Edit", edit_group_swapper_path(@group, swapper) %></td>      
+    </tr>
   <% end %>
-</ol>
+  </tbody>
+</table>

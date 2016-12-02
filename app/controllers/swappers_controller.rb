@@ -2,6 +2,7 @@ class SwappersController < ApplicationController
 
   def edit
     @group = Group.find(params[:group_id])
+    @swappers = @group.swappers.order(:name)
     @swapper = Swapper.find(params[:id])
   end
 

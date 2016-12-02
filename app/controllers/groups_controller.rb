@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @group.swappers
+    @swappers = @group.swappers.order(:name)
     @swapper = Swapper.new
   end
 
@@ -19,7 +19,16 @@ class GroupsController < ApplicationController
   end
 
   def email_blast
-    binding.pry
+    group = Group.find(params[:id])
+
+    group.swap_pairs.each do |pair|
+      gifter = Swapper.find(pair[0])
+      giftee = Swapper.find(pair[1])
+
+      binding.pry
+      
+      SwapMailer.swap_email(gifter, giftee, group).deliver_now
+    end
     
     redirect_to group_path(group)
   end

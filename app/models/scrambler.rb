@@ -20,11 +20,9 @@ class Scrambler
   def couple_rigged_scramble
     scramble
 
-    if picked_couple?
+    if picked_couple? || includes_nil?
       reset_scramble
       couple_rigged_scramble
-    else
-      puts "Success!"
     end
   end
 
@@ -115,6 +113,10 @@ class Scrambler
          couple == team || couple == team.reverse
        end
      end
+  end
+
+  def includes_nil?
+    @swappers.to_a.flatten.include?(nil)
   end
 
   def reset_scramble

@@ -1,7 +1,9 @@
+<h5>Swap</h5>
+
 <%= button_to "Scramble Swappers", group_scramble_path(@group) %>
 
-
 <% unless @group.swap_pairs.empty? %>
-  <%= @group.swap_pairs %>
   <%= button_to "Blast Swap Emails", email_blast_path(@group) %>
+    <p>Pairs</p>
+    <%= @group.swap_pairs.to_s %>
 <% end %>
