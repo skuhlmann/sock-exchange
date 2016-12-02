@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'skeleton-rails'
+gem 'dotenv'
 
 group :development, :test do
   gem 'pry'

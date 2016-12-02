@@ -1,11 +1,11 @@
 <%= render partial: "groups/group_header", locals: { group: @group } %>
 
 <div class="row">
-  <div class="five columns">
+  <div class="six columns">
     <%= render partial: "groups/swapper_list", locals: { group: @group, swappers: @swappers } %>
   </div>
 
-  <div class="four columns">
+  <div class="three columns">
     <h5>Edit swapper</h5>
 
     <%= render partial: "swappers/form", locals: { group: @group, swapper: @swapper } %>

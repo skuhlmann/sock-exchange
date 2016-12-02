@@ -25,8 +25,6 @@ class GroupsController < ApplicationController
       gifter = Swapper.find(pair[0])
       giftee = Swapper.find(pair[1])
 
-      binding.pry
-      
       SwapMailer.swap_email(gifter, giftee, group).deliver_now
     end
     
