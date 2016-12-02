@@ -6,7 +6,7 @@ class SwapMailer < ActionMailer::Base
     @giftee = giftee
     @group = group
 
-    mail(to: @giftee.email,
+    mail(to: @gifter.email,
          subject: "#{@gifter.name} - PUT A SOCK IN IT!")
   end
 end

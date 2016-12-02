@@ -1,4 +1,11 @@
 <div class="row">
-  <h3><%= @group.name %></h3>
-  <p><%= link_to "All groups", root_path %></p>
+  <h3>
+    <%= @group.name %>
+    <span class="swap-details">Swapping <%= @group.gift_description %> on <%= @group.swap_date %></span>
+    
+  </h3>
+  <div class="u-full-width">
+    <p class="pull-right"><%= link_to "All groups", root_path %></p>
+    
+  </div>
 </div>
