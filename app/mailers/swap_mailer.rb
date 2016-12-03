@@ -7,6 +7,6 @@ class SwapMailer < ActionMailer::Base
     @group = group
 
     mail(to: @gifter.email,
-         subject: "#{@gifter.name} - PUT A SOCK IN IT!")
+         subject: "#{@gifter.name} - Put a Sock in it - Brown Family Gift Exchange")
   end
 end
