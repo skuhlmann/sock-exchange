@@ -11,6 +11,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
+  <div class="field">
     <%= f.label :partner %>
     <%= f.select "partner_id", options_from_collection_for_select(@group.swappers, "id", "name", @swapper.partner_id), include_blank: "Select"  %>
   </div>

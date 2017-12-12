@@ -12,10 +12,15 @@
   <% @swappers.each do |swapper| %>
     <tr>
       <td><%= swapper.name %></td>      
-      <td><%= swapper.email %></td>      
+      <td>
+        <%= swapper.email %>
+        </br>
+        <%= swapper.address %>
+      </td>      
       <td><%= swapper.partner ? swapper.partner.name : "" %></td>
       <td><%= link_to "Edit", edit_group_swapper_path(@group, swapper) %></td>      
     </tr>
+
   <% end %>
   </tbody>
 </table>
