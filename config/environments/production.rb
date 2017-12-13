@@ -56,7 +56,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sock_exchange_#{Rails.env}"
 
-  config.action_mailer.default_url_options = { host: 'gifting.samkuhlmann.com' }
+    # :authentication => 'login',
+  config.action_mailer.default_url_options = { host: 'gift-swap.samkuhlmann.com' }
   config.action_mailer.delivery_method = :smtp
   # config.action_mailer.perform_deliveries = true
   # config.action_mailer.raise_delivery_errors = false  
@@ -66,12 +67,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name => ENV['GMAIL_USERNAME'],
     :password => ENV['GMAIL_PASSWORD'],
-    # :domain => 'gifting.samkuhlmann.com',
-    :domain => 'boiling-inlet-25626.herokuapp.com',
+    :domain => 'gift-swap.samkuhlmann.com',
     :address => "smtp.gmail.com",
     :port => 587,
     :authentication => :plain,
-    # :authentication => 'login',
     :enable_starttls_auto => true,
   }
 
