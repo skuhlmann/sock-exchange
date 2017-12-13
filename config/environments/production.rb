@@ -66,10 +66,12 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name => ENV['GMAIL_USERNAME'],
     :password => ENV['GMAIL_PASSWORD'],
-    :domain => 'gifting.samkuhlmann.com',
+    # :domain => 'gifting.samkuhlmann.com',
+    :domain => 'boiling-inlet-25626.herokuapp.com',
     :address => "smtp.gmail.com",
     :port => 587,
     :authentication => :plain,
+    # :authentication => 'login',
     :enable_starttls_auto => true,
   }
 
