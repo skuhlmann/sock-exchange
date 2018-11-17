@@ -20,6 +20,11 @@
     <%= f.select "partner_id", options_from_collection_for_select(@group.swappers, "id", "name", @swapper.partner_id), include_blank: "Select"  %>
   </div>
 
+  <div class="field">
+    <%= f.label :child %>
+    <%= f.select "child_id", options_from_collection_for_select(@group.swappers, "id", "name", @swapper.child_id), include_blank: "Select"  %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

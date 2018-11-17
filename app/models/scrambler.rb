@@ -20,7 +20,7 @@ class Scrambler
   def couple_rigged_scramble
     scramble
 
-    if picked_couple? || includes_nil?
+    if picked_couple? || includes_nil? || got_a_child?
       reset_scramble
       couple_rigged_scramble
     end
@@ -117,6 +117,10 @@ class Scrambler
 
   def includes_nil?
     @swappers.to_a.flatten.include?(nil)
+  end
+
+  def got_a_child?
+    @swappers.any? { |k,v| Swapper.find(k).child_id == v }
   end
 
   def reset_scramble

@@ -33,7 +33,7 @@ class SwappersController < ApplicationController
   private
 
   def swapper_params
-    params.require(:swapper).permit(:name, :email, :partner_id, :address)
+    params.require(:swapper).permit(:name, :email, :partner_id, :address, :child_id)
   end
 
   def update_partner(swapper)
